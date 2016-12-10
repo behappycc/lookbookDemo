@@ -1,0 +1,26 @@
+{
+  "name": "lookbookDemo",
+  "version": "0.1.0",
+  "private": true,
+  "devDependencies": {
+    "eslint-config-airbnb": "^13.0.0",
+    "react-scripts": "0.8.1"
+  },
+  "dependencies": {
+    "babel-eslint": "^7.1.1",
+    "http-client": "^4.3.1",
+    "ramda": "^0.22.1",
+    "react": "^15.4.1",
+    "react-bootstrap": "^0.30.7",
+    "react-dom": "^15.4.1",
+    "react-dropzone": "^3.7.3",
+    "recompose": "^0.20.2"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "lint": "eslint ./",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}

@@ -1,0 +1,71 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 80px;
+}
+
+.App-header {
+  background-color: #222;
+  height: 200px;
+  padding: 20px;
+  color: white;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+.FormWrap {
+  width: 300px;
+  margin: 20px auto;
+}
+
+.HrWrap {
+  display: flex;
+  flex-direction: row;
+}
+
+.HrLine {
+  margin: auto 10px;
+  height: 1px;
+  flex: 1;
+  background: white;
+}
+
+.HrChildren {
+  width: max-content;
+}
+
+.DropzoneWrap {
+  width: 200px;
+  height: 200px;
+  margin: auto;
+  border-width: 2px;
+  border-color: rgb(102, 102, 102);
+  border-style: dashed;
+  border-radius: 5px;
+}
+
+.DropzoneBox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.FormGroupWrap {
+  display: flex;
+}
+
+.FormGroupLabel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width:100px;
+}
+
+.SubmitButton {
+  margin-top: 20px;
+}
