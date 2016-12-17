@@ -9,12 +9,16 @@
   "dependencies": {
     "babel-eslint": "^7.1.1",
     "http-client": "^4.3.1",
+    "material-ui": "^0.16.5",
     "ramda": "^0.22.1",
     "react": "^15.4.1",
     "react-bootstrap": "^0.30.7",
     "react-dom": "^15.4.1",
     "react-dropzone": "^3.7.3",
-    "recompose": "^0.20.2"
+    "react-tap-event-plugin": "^2.0.1",
+    "recompose": "^0.20.2",
+    "semantic-ui-react": "^0.62.2",
+    "victory": "^0.14.2"
   },
   "scripts": {
     "start": "react-scripts start",

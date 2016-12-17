@@ -1,0 +1,36 @@
+.App-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: white;
+  background-color: #222222;
+  height: 200px;
+  padding: 20px;
+}
+
+.App-h2 {
+  font-family: 'Libre Baskerville';
+  display: flex;
+  margin: 30px auto;
+  border: 3px solid white;
+  justify-content: center;
+  padding: 10px;
+  padding-top: 13px;
+  letter-spacing: 6px;
+}
+
+.HrWrap {
+  display: flex;
+  flex-direction: row;
+}
+
+.HrLine {
+  margin: auto 10px;
+  height: 1px;
+  flex: 1;
+  background: white;
+}
+
+.HrChildren {
+  width: max-content;
+}
