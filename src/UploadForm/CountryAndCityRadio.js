@@ -27,7 +27,7 @@ const countryNames =
 const defaultCityList = []
 const getCityListByCountry = 
   R.ifElse(
-    R.equals(''),
+    R.isNil,
     R.always(defaultCityList),
     R.pipe(
       R.toLower,
@@ -48,6 +48,7 @@ const enhance = compose(
     country,
     ...otherProps,
   }) => ({
+    country,
     cityList: processDataSource(getCityListByCountry(country)),
     ...otherProps,
   })),
@@ -68,6 +69,8 @@ const CountryAndCityRadio = ({
       menuCloseDelay={100}
       onUpdateInput={handleCountryInput}
       filter={autoCompleteFilter}
+      errorText={R.isEmpty(country) ? 'Country cannot be empty' : ''}
+      openOnFocus
       fullWidth
     />
     <AutoComplete
@@ -77,6 +80,8 @@ const CountryAndCityRadio = ({
       menuCloseDelay={100}
       onUpdateInput={handleCityInput}
       filter={autoCompleteFilter}
+      errorText={R.isEmpty(city) ? 'City cannot be empty' : ''}
+      openOnFocus
       fullWidth
     />
   </div>

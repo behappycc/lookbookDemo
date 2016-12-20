@@ -23,19 +23,57 @@ const uploadFormData = (form) => createFetch(
   parse('json', 'jsonData'),
 )
 
+const validator = {
+  city: /.*\S.*/, 
+  gender: /^(male|female)$/g, 
+  age: /\d+/g, 
+  country: /.*\S.*/, 
+}
+
+const validateAndDropFormProps = 
+  R.pipe(
+    R.toPairs,
+    R.filter(([key, value]) => R.complement(R.isNil(value))),
+    R.reduce(
+      (acc, [key, value]) => R.ifElse(
+        R.test(R.prop(key, validator)),
+        R.always({
+          ...acc,
+          [key]: value,
+        }),
+        R.always(acc)
+      )(value)
+    , {})
+  )
+
+const logAndPass = (t) => {
+  console.log(t)
+  return t
+}
+const requiredPropKeys = ['gender', 'city', 'age', 'country']
+const validateProps = R.pipe(
+  validateAndDropFormProps,
+  R.keys,
+  logAndPass,
+  R.all(R.contains(requiredPropKeys)),
+  logAndPass,
+)
+
 const enhance = compose(
-  withState('gender', 'updateGender', 'male'),
+  withState('gender', 'updateGender', null),
   withState('age', 'updateAge', null),
-  withState('city', 'updateCity', ''),
-  withState('country', 'updateCountry', ''),
-  withState('photo', 'updatePhoto', ''),
+  withState('city', 'updateCity', null),
+  withState('country', 'updateCountry', null),
+  withState('photo', 'updatePhoto', null),
   mapProps(({
-    photo,
+    city, gender, age, country, photo,
     ...otherProps,
   }) => ({
-    photo,
+    city, gender, age, country, photo,
     photoUrl: R.propOr('', 'preview', photo),
     photoHeight: R.propOr(100, 'height', photo),
+    // isValid: validateProps({ city, gender, age, country }),
+    isValid: true,
     ...otherProps,
   })),
   withHandlers({
@@ -95,9 +133,11 @@ const UploadForm = ({
   photoUrl,
   photoHeight,
 
+
   handleDrop,
   handleSubmit,
 
+  isValid,
   isLoading,
 }) => (
   <div 
@@ -157,6 +197,7 @@ const UploadForm = ({
       <RaisedButton 
         label="Submit" 
         className="button" 
+        disabled={!isValid}
         onClick={handleSubmit}
       />
     </div>
