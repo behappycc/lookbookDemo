@@ -14,7 +14,9 @@ const defaultFormState = {
   error: false,
 }
 
-const formReducer = (state = defaultFormState, { type, payload, error } = {}) => {
+// Action -> Dispatch -> State -> Component
+
+const formReducer = (state , { type, payload, error }) => {
   switch (type) {
     case UPLOAD: {
       if (error) 

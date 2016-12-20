@@ -1,5 +1,5 @@
 import React from 'react'
-import { VictoryPie } from 'victory'
+import { VictoryPie, VictoryTheme, VictoryLabel } from 'victory'
 import RaisedButton from 'material-ui/RaisedButton'
 
 import ShareIconGroup from './ShareIconGroup'
@@ -22,6 +22,10 @@ const ResultDisplay = ({
           data={rank}
           x="name"
           y="prob"
+          theme={VictoryTheme.material}
+          padding={60}
+          labelComponent={<VictoryLabel dx={10}/>}
+          
           animate={{
             duration: 2000, 
             onLoad: {duration: 1000}, 
