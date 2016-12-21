@@ -1,13 +1,21 @@
 import React from 'react'
 import { VictoryPie, VictoryTheme, VictoryLabel } from 'victory'
+import { withHandlers } from 'recompose'
 import RaisedButton from 'material-ui/RaisedButton'
 
 import ShareIconGroup from './ShareIconGroup'
-import { FRONTEND_URL } from '../config/apiEndPoints'
 
 import './styles/ResultDisplay.css'
 
+const enhance = withHandlers({
+  handleTryAgainClick:
+    () => () => {
+      window.location.replace('/')
+    },
+})
+
 const ResultDisplay = ({
+  handleTryAgainClick,
   imgUrl,
   rank,
 }) => (
@@ -24,19 +32,21 @@ const ResultDisplay = ({
           y="prob"
           theme={VictoryTheme.material}
           padding={60}
-          labelComponent={<VictoryLabel dx={10}/>}
-          
+          labelComponent={<VictoryLabel dx={10} />}
           animate={{
             duration: 2000, 
             onLoad: {duration: 1000}, 
           }}
         />
-        <ShareIconGroup />
+        <ShareIconGroup 
+          imgUrl={imgUrl}
+          rank={rank}
+        />
       </div>
     </div>
     <div className="resultDisplayLowerWrap">
       <RaisedButton
-        href={FRONTEND_URL}
+        onClick={handleTryAgainClick}
       >
         Try again
       </RaisedButton>
@@ -44,4 +54,4 @@ const ResultDisplay = ({
   </div>
 )
 
-export default ResultDisplay
+export default enhance(ResultDisplay)

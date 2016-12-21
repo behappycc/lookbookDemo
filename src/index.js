@@ -20,13 +20,8 @@ const processRawRank =
       prob: Number
     })
   )
-const logAndPass = (t) => {
-  console.log(t)
-  return t
-}
 
 const separateQueryAndSquash = R.pipe(
-  logAndPass,
   R.split('&'),
   R.map(R.split('=')),
   R.reduce((acc, cur) => {
@@ -42,7 +37,11 @@ const separateQueryAndSquash = R.pipe(
       ...acc,
       [cur[0]]: cur[1],
     }
-  }, {})
+  }, {}),
+  R.when(
+    R.equals({ "": undefined }),
+    R.always({}),
+  ),
 )
 
 const takeSearchPath = R.pipe(
@@ -61,7 +60,7 @@ const parseQuery =
 
 
 const queriesOnLoad = parseQuery(window.location)
-console.log(queriesOnLoad)
+
 const RootApp = () => (
 	<MuiThemeProvider>
 		<App query={queriesOnLoad} />
