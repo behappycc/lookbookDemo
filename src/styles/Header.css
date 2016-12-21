@@ -8,15 +8,23 @@
   padding: 20px;
 }
 
-.App-h2 {
-  font-family: 'Libre Baskerville';
+.App-h2-wrap {
   display: flex;
   margin: 30px auto;
   border: 3px solid white;
   justify-content: center;
   padding: 10px;
   padding-top: 13px;
+  text-decoration: none;
+  color: white;
   letter-spacing: 6px;
+}
+
+.App-h2 {
+  font-family: 'Libre Baskerville';
+  color: white;
+  letter-spacing: 6px;
+  margin-left: 5px;
 }
 
 .HrWrap {

@@ -11,7 +11,9 @@ const Hr = ({ children }) => (
 
 const Header = () => (
   <div className="App-header">
-    <h2 className="App-h2">FASHION  WORLDMAP</h2>
+    <a href="/" className="App-h2-wrap">
+    	<h2 className="App-h2">FASHION  WORLDMAP</h2>
+    </a>
     <Hr>See your outfit blends by cities</Hr>
   </div>
 )
