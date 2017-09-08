@@ -32,7 +32,7 @@ const ResultDisplay = ({
           y="prob"
           theme={VictoryTheme.material}
           padding={60}
-          labelComponent={<VictoryLabel dx={10} />}
+          labelComponent={<VictoryLabel dx={30} />}
           animate={{
             duration: 2000, 
             onLoad: {duration: 1000}, 
