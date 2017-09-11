@@ -31,6 +31,7 @@ const ResultDisplay = ({
           x="name"
           y="prob"
           theme={VictoryTheme.material}
+          style={{ parent: { overflow: "visible" } }}
           padding={60}
           labelComponent={<VictoryLabel dx={10} />}
           animate={{
