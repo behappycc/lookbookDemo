@@ -1,35 +1,60 @@
 {
-  "name": "lookbookDemo",
-  "version": "0.1.0",
+  "name": "fashion-worldmap",
+  "version": "0.0.1",
   "private": true,
+  "description": "fashion-worldmap",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "jest"
+  },
+  "author": "Juliachang",
+  "jest": {
+    "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/internals/mocks/fileMock.js",
+      "\\.(css|less)$": "identity-obj-proxy"
+    }
+  },
   "devDependencies": {
-    "eslint-config-airbnb": "^13.0.0",
-    "react-scripts": "0.8.1"
+    "babel-core": "^6.26.0",
+    "babel-jest": "^21.2.0",
+    "babel-loader": "^7.1.2",
+    "babel-plugin-import": "^1.6.0",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "css-loader": "^0.28.7",
+    "enzyme": "^3.0.0",
+    "extract-text-webpack-plugin": "^3.0.0",
+    "file-loader": "^0.11.2",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^21.2.1",
+    "lodash": "^4.17.4",
+    "react-test-renderer": "^16.0.0",
+    "style-loader": "^0.18.2",
+    "url-loader": "^0.5.9",
+    "webpack": "^3.6.0",
+    "webpack-dev-server": "^2.9.1"
   },
   "dependencies": {
-    "babel-eslint": "^7.1.1",
-    "http-client": "^4.3.1",
-    "live-server": "^1.1.0",
-    "material-ui": "^0.16.5",
-    "pm2": "^2.6.1",
-    "ramda": "^0.22.1",
-    "react": "^15.4.1",
-    "react-bootstrap": "^0.30.7",
-    "react-dom": "^15.4.1",
-    "react-dropzone": "^3.7.3",
-    "react-social": "^1.6.2",
-    "react-tap-event-plugin": "^2.0.1",
-    "recompose": "^0.20.2",
-    "semantic-ui-react": "^0.62.2",
-    "victory": "^0.14.2",
-    "serve": "^6.0.6"
-  },
-  "scripts": {
-    "start": "pm2 serve -p 8080 build/",
-    "dev": "react-scripts start",
-    "build": "ENV=production react-scripts build",
-    "lint": "eslint ./",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "antd": "^2.13.3",
+    "chart.js": "^2.7.0",
+    "es6-promise": "^4.1.1",
+    "express": "^4.15.5",
+    "history": "^4.7.2",
+    "isomorphic-fetch": "^2.2.1",
+    "react": "^16.0.0",
+    "react-chartjs-2": "^2.6.2",
+    "react-dom": "^16.0.0",
+    "react-redux": "^5.0.6",
+    "react-responsive": "^1.3.4",
+    "react-router": "^4.2.0",
+    "react-router-dom": "^4.2.2",
+    "react-router-redux": "^5.0.0-alpha.6",
+    "react-websocket": "^1.2.0",
+    "redux": "^3.7.2",
+    "redux-saga": "0.15.6"
   }
 }

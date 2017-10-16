@@ -1,0 +1,1 @@
+export const GET_PIC = 'GET_PIC'

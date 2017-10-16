@@ -1,73 +1,27 @@
+import "babel-polyfill"
+
 import React from 'react'
 import ReactDOM from 'react-dom'
-import R from 'ramda'
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
-import injectTapEventPlugin from 'react-tap-event-plugin'
- 
-import App from './App'
-import './styles/index.css'
+import {HashRouter as Router, Route, Switch} from 'react-router-dom'
+import {Provider} from 'react-redux'
 
-// Needed for onTouchTap 
-// http://stackoverflow.com/a/34015469/988941 
-injectTapEventPlugin()
+import configureStore from './store/configureStore'
+import rootSaga from './sagas'
+import Index from './containers/Index'
 
 
-const processRawRank = 
-  R.pipe(
-    R.split(','),
-    R.zipObj(['name', 'prob']),
-    R.evolve({
-      prob: Number
-    })
-  )
-
-const separateQueryAndSquash = R.pipe(
-  R.split('&'),
-  R.map(R.split('=')),
-  R.reduce((acc, cur) => {
-    if (cur[0] === 'data'){
-      const currentRank = processRawRank(cur[1])
-      return {
-        ...acc,
-        rank: [...R.propOr([], 'rank')(acc), currentRank],
-      } 
-    }
-    console.log(acc, cur)
-    return {
-      ...acc,
-      [cur[0]]: cur[1],
-    }
-  }, {}),
-  R.when(
-    R.equals({ "": undefined }),
-    R.always({}),
-  ),
-)
-
-const takeSearchPath = R.pipe(
-  R.prop('search'),
-  R.tail,
-)
-
-const parseQuery = 
-  R.tryCatch(
-    R.pipe(
-      takeSearchPath,
-      separateQueryAndSquash,
-    ),
-    R.always({}),
-  )
-
-
-const queriesOnLoad = parseQuery(window.location)
-
-const RootApp = () => (
-	<MuiThemeProvider>
-		<App query={queriesOnLoad} />
-	</MuiThemeProvider>
-)
+const store = configureStore()
+store.runSaga(rootSaga)
 
 ReactDOM.render(
-  <RootApp />,
+  <Provider store={store}>
+    <Router history={history}>
+      <div className="app">
+        <Switch>
+          <Route exact path="/" component={Index}/>
+        </Switch>
+      </div>
+    </Router>
+  </Provider>,
   document.getElementById('root')
 )
