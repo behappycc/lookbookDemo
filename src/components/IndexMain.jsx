@@ -145,7 +145,7 @@ class IndexMain extends React.Component {
               <div style={sectionTextStyle}>
                 <h1>填入基本資料</h1>
                 <h3>123</h3>
-                <div className="addthis_inline_share_toolbox"></div>
+                
                 <RadioGroup onChange={(e) => this.handleSelectGender(e)} value={this.state.value}>
                   <Radio value={"male"}>Male</Radio>
                   <Radio value={"female"}>Femail</Radio>
@@ -156,6 +156,12 @@ class IndexMain extends React.Component {
                 
                 <Input placeholder="Please enter your country" />
                 <Input placeholder="Please enter your city" />
+                <Button type="primary" size={'large'}>
+                  <a href="https://hahow.in/cr/pydataml" target="_blank" className="btn btn-info btn-raised btn-lg">
+                    <i className="fa fa-rocket"></i> SUBMIT
+                  </a>
+                </Button>
+                <div className="addthis_inline_share_toolbox"></div>
               </div>
             </Col>
           </Row>
