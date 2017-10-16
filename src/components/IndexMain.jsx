@@ -6,6 +6,8 @@ import Responsive from 'react-responsive'
 import _ from 'lodash'
 import {Button, Row, Col, Card, Table, Steps, Icon, notification, Input, Radio, InputNumber} from 'antd'
 
+import WrappedUploadForm from './UploadForm'
+
 
 const Background = "../../static/img/cover.jpg"
 const innerHeight = window.innerHeight
@@ -143,30 +145,18 @@ class IndexMain extends React.Component {
           <Row type="flex">
              <Col xs={24} sm={24} md={24} lg={24} xl={24}>
               <div style={sectionTextStyle}>
-                <h1>填入基本資料</h1>
-                <h3>123</h3>
-                
-                <RadioGroup onChange={(e) => this.handleSelectGender(e)} value={this.state.value}>
-                  <Radio value={"male"}>Male</Radio>
-                  <Radio value={"female"}>Femail</Radio>
-                </RadioGroup>
-                <div>
-                  <InputNumber min={1} max={10} defaultValue={3} onChange={(e) => this.handleChangeAge(e)} />
-                </div>
-                
-                <Input placeholder="Please enter your country" />
-                <Input placeholder="Please enter your city" />
-                <Button type="primary" size={'large'}>
-                  <a href="https://hahow.in/cr/pydataml" target="_blank" className="btn btn-info btn-raised btn-lg">
-                    <i className="fa fa-rocket"></i> SUBMIT
-                  </a>
-                </Button>
+                <WrappedUploadForm />
                 <div className="addthis_inline_share_toolbox"></div>
               </div>
             </Col>
           </Row>
         </section>
+
+
+
       </div>
+
+
     )
   }
 }
