@@ -5,6 +5,8 @@ import {Link} from "react-router-dom"
 import Responsive from 'react-responsive'
 import _ from 'lodash'
 import {Button, Row, Col, Card, Table, Steps, Icon, notification, Input, Radio, InputNumber} from 'antd'
+import { VictoryPie, VictoryTheme, VictoryLabel } from 'victory'
+// import { VictoryPie } from 'victory'
 
 import WrappedUploadForm from './UploadForm'
 import Cover from './Cover'
@@ -53,20 +55,7 @@ const customCardPStyle = {
   color: '#999'
 }
 
-const RadioGroup = Radio.Group
 
-const openNotification = () => {
-  notification.open({
-    message: '',
-    description: '',
-    icon: <Icon type="smile-circle" style={{ color: '#108ee9' }} />,
-  })
-}
-
-const Desktop = ({children}) => <Responsive minWidth={992} children={children}/>;
-const Tablet = ({children}) => <Responsive minWidth={768} maxWidth={992} children={children}/>;
-const Mobile = ({children}) => <Responsive maxWidth={768} children={children}/>;
-const Default = ({children}) => <Responsive minWidth={768} children={children}/>;
 
 class IndexMain extends React.Component {
   constructor(props) {
@@ -77,12 +66,37 @@ class IndexMain extends React.Component {
   render() {
     console.log('yy')
     console.log(this.props.userReducer)
+    console.log(this.props.userReducer.rank)
     return (
       <div className="ant-layout-content">
         <Cover />
 
         <section style={sectionStyle1}>
           <Row type="flex">
+            <Col xs={24} sm={24} md={24} lg={12} xl={12}>
+              <div style={sectionTextStyle}>
+              <VictoryPie
+              data={[
+                { x: "Cats", y: 35 },
+                { x: "Dogs", y: 40 },
+                { x: "Birds", y: 55 }
+              ]}
+            />
+                {/* <VictoryPie 
+                  data={this.props.userReducer.rank}
+                  x="name"
+                  y="prob"
+                  theme={VictoryTheme.material}
+                  style={{ parent: { overflow: "visible" } }}
+                  padding={60}
+                  labelComponent={<VictoryLabel dx={10} />}
+                  animate={{
+                    duration: 2000, 
+                    onLoad: {duration: 1000}, 
+                  }}
+                /> */}
+              </div>
+            </Col>
             <Col xs={24} sm={24} md={24} lg={12} xl={12}>
               <div style={sectionTextStyle}>
                 <img src={this.props.userReducer.imgUrl} alt="" />

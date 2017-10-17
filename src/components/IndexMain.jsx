@@ -53,21 +53,6 @@ const customCardPStyle = {
   color: '#999'
 }
 
-const RadioGroup = Radio.Group
-
-const openNotification = () => {
-  notification.open({
-    message: '',
-    description: '',
-    icon: <Icon type="smile-circle" style={{ color: '#108ee9' }} />,
-  })
-}
-
-const Desktop = ({children}) => <Responsive minWidth={992} children={children}/>;
-const Tablet = ({children}) => <Responsive minWidth={768} maxWidth={992} children={children}/>;
-const Mobile = ({children}) => <Responsive maxWidth={768} children={children}/>;
-const Default = ({children}) => <Responsive minWidth={768} children={children}/>;
-
 class IndexMain extends React.Component {
   constructor(props) {
     super(props)
