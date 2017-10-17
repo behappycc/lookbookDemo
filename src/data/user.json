@@ -1,0 +1,3 @@
+{
+    "user":[{"id":"a123","age":"1","gender":"male","country":"2","city":"3","imgUrl":"https://i.imgur.com/Sc59JV1.jpg","rank":[{"name":"Rio De Janeiro","prob":44.8},{"name":"Prague","prob":24.1},{"name":"Helsinki","prob":8.4},{"name":"Casablanca","prob":4.7},{"name":"Berlin","prob":3.0},{"name":"others:","prob":15.0}]}]
+}

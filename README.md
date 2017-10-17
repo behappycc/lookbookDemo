@@ -27,6 +27,10 @@ $ webpack -w
 
 # Start lookbookDemo
 $ yarn start
+
+# json-server
+$ json-server --watch --port 8000 user.json
+$ http://localhost:8000/user/a123
 ```
 
 ## Production

@@ -1,5 +1,7 @@
-import {getProductList} from "./products"
+import {getUser} from './user'
+import {uploadUser }from './upload'
 
 export {
-  getProductList,
+  getUser,
+  uploadUser
 }

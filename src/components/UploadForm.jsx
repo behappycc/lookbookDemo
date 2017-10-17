@@ -1,7 +1,10 @@
 import React from 'react'
+import {connect} from 'react-redux'
 import { Form, Icon, Input, Button, Checkbox, Radio, Upload } from 'antd';
 const FormItem = Form.Item;
 const RadioGroup = Radio.Group;
+
+import * as actionCreators from '../actions'
 
 class UploadForm extends React.Component {
   constructor(props) {
@@ -12,12 +15,13 @@ class UploadForm extends React.Component {
   }
 
   handleSubmit(e) {
-    e.preventDefault();
+    e.preventDefault()
     this.props.form.validateFields((err, values) => {
       if (!err) {
-        console.log('Received values of upload-form: ', values);
+        console.log('Received values of upload-form: ', values)
+        this.props.uploadUser()
       }
-    });
+    })
   }
 
   normFile(e) {
@@ -93,4 +97,11 @@ class UploadForm extends React.Component {
 
 const WrappedUploadForm = Form.create()(UploadForm);
 
-export default WrappedUploadForm
+const mapStateToProps = store => (
+  {
+    uploadReducer: store.uploadReducer,
+  }
+)
+
+export default connect(mapStateToProps, actionCreators)(WrappedUploadForm)
+

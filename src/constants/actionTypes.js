@@ -1,1 +1,2 @@
-export const GET_PIC = 'GET_PIC'
+export const UPLOAD_USER = 'UPLOAD_USER'
+export const GET_USER = 'GET_USER'

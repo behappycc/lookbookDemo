@@ -20,8 +20,7 @@ ReactDOM.render(
       <div className="app">
         <Switch>
           <Route exact path="/result/:user" component={Result}/>
-          <Route exact path="/" component={Index}/>
-          
+          <Route exact path="/" component={Index}/>        
         </Switch>
       </div>
     </Router>

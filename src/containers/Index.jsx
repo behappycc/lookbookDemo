@@ -14,7 +14,6 @@ class Index extends React.Component {
   }
 
   render() {
-    console.log('index')
     return (
       <div className="layout ant-layout">
         {/* <Header/> */}

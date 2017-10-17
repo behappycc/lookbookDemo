@@ -1,10 +1,11 @@
-export function ApiGetAllProducts() {
+export function ApiUploadUser(payload) {
   return(
     fetch(
-      '',
+      'http://localhost:8000/uplaod/',
       {
         accept: 'application/json',
-        method: 'GET',
+        method: 'POST',
+        body: JSON.stringify(payload)
       }
     ).then((response) => {
       if (response.status >= 200 && response.status < 300) {
@@ -22,3 +23,4 @@ export function ApiGetAllProducts() {
     })
   )
 }
+

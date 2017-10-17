@@ -71,29 +71,10 @@ const Default = ({children}) => <Responsive minWidth={768} children={children}/>
 class IndexMain extends React.Component {
   constructor(props) {
     super(props)
-    this.state = {
-      value: 'male'
-    }
-    this.handleClickButton = this.handleClickButton.bind(this)
-  }
 
-  handleClickButton() {
-    
-  }
-
-  handleSelectGender(e) {
-    console.log('radio checked', e.target.value)
-    this.setState({
-      value: e.target.value,
-    })
-  }
-
-  handleChangeAge(e) {
-    console.log('changed', e)
   }
 
   render() {
-    const Step = Steps.Step
     return (
       <div className="ant-layout-content">
         <Cover />
@@ -123,6 +104,6 @@ const mapStateToProps = store => (
     testReducer: store.testReducer,
     // value: "male"
   }
-);
+)
 
 export default connect(mapStateToProps, actionCreators)(IndexMain)

@@ -71,35 +71,23 @@ const Default = ({children}) => <Responsive minWidth={768} children={children}/>
 class IndexMain extends React.Component {
   constructor(props) {
     super(props)
-    this.state = {
-      value: 'male'
-    }
-    this.handleClickButton = this.handleClickButton.bind(this)
-  }
 
-  handleClickButton() {
-    
-  }
-
-  handleSelectGender(e) {
-    console.log('radio checked', e.target.value)
-    this.setState({
-      value: e.target.value,
-    })
-  }
-
-  handleChangeAge(e) {
-    console.log('changed', e)
   }
 
   render() {
-    const Step = Steps.Step
+    console.log('yy')
+    console.log(this.props.userReducer)
     return (
       <div className="ant-layout-content">
         <Cover />
 
         <section style={sectionStyle1}>
           <Row type="flex">
+            <Col xs={24} sm={24} md={24} lg={12} xl={12}>
+              <div style={sectionTextStyle}>
+                <img src={this.props.userReducer.imgUrl} alt="" />
+              </div>
+            </Col>
              <Col xs={24} sm={24} md={24} lg={24} xl={24}>
               <div style={sectionTextStyle}>
                 <div className="addthis_inline_share_toolbox"></div>
@@ -116,8 +104,7 @@ class IndexMain extends React.Component {
 
 const mapStateToProps = store => (
   {
-    testReducer: store.testReducer,
-    // value: "male"
+    userReducer: store.userReducer,
   }
 );
 
