@@ -8,6 +8,7 @@ import {Provider} from 'react-redux'
 import configureStore from './store/configureStore'
 import rootSaga from './sagas'
 import Index from './containers/Index'
+import Result from './containers/Result'
 
 
 const store = configureStore()
@@ -18,7 +19,9 @@ ReactDOM.render(
     <Router history={history}>
       <div className="app">
         <Switch>
+          <Route exact path="/result/:user" component={Result}/>
           <Route exact path="/" component={Index}/>
+          
         </Switch>
       </div>
     </Router>

@@ -1,24 +1,23 @@
 import React from 'react';
-import { connect } from 'react-redux';
+import { connect } from 'react-redux'
 
 import Header from '../components/Header'
 import Footer from '../components/Footer'
-import IndexMain from '../components/IndexMain'
+import ResultMain from '../components/ResultMain'
 
 import * as actionCreators from '../actions'
 
-class Index extends React.Component {
+class Result extends React.Component {
   constructor(props) {
     super(props)
 
   }
 
   render() {
-    console.log('index')
+    console.log(this.props.match.params.user)
     return (
-      <div className="layout ant-layout">
-        {/* <Header/> */}
-        <IndexMain/>
+      <div className="layout ant-layout">         
+        <ResultMain/>
         <Footer/>
       </div>
     )
@@ -31,4 +30,4 @@ const mapStateToProps = store => (
   }
 )
 
-export default connect(mapStateToProps, actionCreators)(Index)
+export default connect(mapStateToProps, actionCreators)(Result)
