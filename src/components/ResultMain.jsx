@@ -5,8 +5,7 @@ import {Link} from "react-router-dom"
 import Responsive from 'react-responsive'
 import _ from 'lodash'
 import {Button, Row, Col, Card, Table, Steps, Icon, notification, Input, Radio, InputNumber} from 'antd'
-import { VictoryPie, VictoryTheme, VictoryLabel } from 'victory'
-// import { VictoryPie } from 'victory'
+import { VictoryBar, VictoryPie, VictoryTheme, VictoryLabel } from 'victory'
 
 import WrappedUploadForm from './UploadForm'
 import Cover from './Cover'
@@ -55,7 +54,12 @@ const customCardPStyle = {
   color: '#999'
 }
 
-
+const data = [
+    {quarter: 1, earnings: 13000},
+    {quarter: 2, earnings: 16500},
+    {quarter: 3, earnings: 14250},
+    {quarter: 4, earnings: 19000}
+  ];
 
 class IndexMain extends React.Component {
   constructor(props) {
@@ -75,13 +79,23 @@ class IndexMain extends React.Component {
           <Row type="flex">
             <Col xs={24} sm={24} md={24} lg={12} xl={12}>
               <div style={sectionTextStyle}>
-              <VictoryPie
-              data={[
-                { x: "Cats", y: 35 },
-                { x: "Dogs", y: 40 },
-                { x: "Birds", y: 55 }
-              ]}
-            />
+                <img src={this.props.userReducer.imgUrl} alt="" />
+              </div>
+            </Col>
+
+            <Col xs={24} sm={24} md={24} lg={12} xl={12}>
+              <div style={sectionTextStyle}>
+
+                <VictoryPie 
+                  data={this.props.userReducer.rank}
+                  x="name"
+                  y="prob"
+                  theme={VictoryTheme.material}
+                  style={{ parent: { overflow: "visible" } }}
+                  padding={60}
+                  labelComponent={<VictoryLabel dx={10} />}
+                />
+
                 {/* <VictoryPie 
                   data={this.props.userReducer.rank}
                   x="name"
@@ -97,11 +111,7 @@ class IndexMain extends React.Component {
                 /> */}
               </div>
             </Col>
-            <Col xs={24} sm={24} md={24} lg={12} xl={12}>
-              <div style={sectionTextStyle}>
-                <img src={this.props.userReducer.imgUrl} alt="" />
-              </div>
-            </Col>
+            
              <Col xs={24} sm={24} md={24} lg={24} xl={24}>
               <div style={sectionTextStyle}>
                 <div className="addthis_inline_share_toolbox"></div>
