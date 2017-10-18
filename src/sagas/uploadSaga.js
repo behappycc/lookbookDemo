@@ -3,7 +3,9 @@ import * as types from '../constants/actionTypes'
 import { ApiUploadUser } from '../services/upload'
 
 export function* uploadUser(action) {
-  yield call(ApiUploadUser, action.payload);
+  const response = yield call(ApiUploadUser, action.payload);
+
+  window.location.href = "http://localhost:8888/#/result/" + response['user'];
 }
 
 export function*  watchUploadUser() {
