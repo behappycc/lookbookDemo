@@ -70,6 +70,7 @@ class IndexMain extends React.Component {
   render() {
     console.log('yy')
     console.log(this.props.userReducer)
+    console.log(this.props.userReducer.imgUrl)
     console.log(this.props.userReducer.rank)
     return (
       <div className="ant-layout-content">
