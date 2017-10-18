@@ -1,8 +1,9 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import { Form, Icon, Input, Button, Checkbox, Radio, Upload } from 'antd';
-const FormItem = Form.Item;
-const RadioGroup = Radio.Group;
+import { Form, Icon, Input, Button, Checkbox, Radio, Upload } from 'antd'
+import Dropzone from 'react-dropzone'
+const FormItem = Form.Item
+const RadioGroup = Radio.Group
 
 import * as actionCreators from '../actions'
 
@@ -10,8 +11,8 @@ class UploadForm extends React.Component {
   constructor(props) {
     super(props);
 
-    this.handleSubmit = this.handleSubmit.bind(this);
-    this.normFile = this.normFile.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this)
+    this.normFile = this.normFile.bind(this)
   }
 
   handleSubmit(e) {
@@ -29,7 +30,7 @@ class UploadForm extends React.Component {
     if (Array.isArray(e)) {
       return e;
     }
-    return e && e.fileList;
+    return e && e.fileList
   }
 
 
@@ -69,7 +70,7 @@ class UploadForm extends React.Component {
               <Input prefix={<Icon type="environment-o" style={{ fontSize: 13 }} />} placeholder="City" />
             )}
           </FormItem>
-          <FormItem>
+          {/*<FormItem>
             <div className="dropbox">
               {getFieldDecorator('dragger', {
                 valuePropName: 'fileList',
@@ -83,6 +84,15 @@ class UploadForm extends React.Component {
                 </Upload.Dragger>
               )}
             </div>
+          </FormItem>*/}
+          <FormItem>
+            {getFieldDecorator('img', {
+              rules: [{ required: true, message: 'Please input images!' }],
+            })(
+              <Dropzone>
+                
+              </Dropzone>
+            )}
           </FormItem>
           <FormItem>
             <Button type="primary" htmlType="submit" className="login-form-button">
