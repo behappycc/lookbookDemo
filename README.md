@@ -11,6 +11,7 @@ $ git clone https://github.com/behappycc/lookbookDemo
 
 # Go into the repository
 $ cd lookbookDemo
+$ git checkout feature/refactor
 
 # Install dependencies
 $ curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
@@ -53,8 +54,9 @@ $ sudo apt-get install docker-ce
 
 ```
 
-### Docker
+### Docker run
 ```
-$ sudo docker build -t lookbookDemo .
-$ sudo docker run -it -p 8888:8888 lookbookDemo
+$ git checkout feature/refactor
+$ sudo docker build -t lookbook-demo .
+$ sudo docker run -it -p 80:8888 lookbook-demo
 ```

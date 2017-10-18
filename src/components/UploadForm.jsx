@@ -37,7 +37,6 @@ class UploadForm extends React.Component {
   }
 
   normFile(e) {
-    console.log('Upload event:', e);
     if (Array.isArray(e)) {
       return e;
     }
@@ -45,7 +44,7 @@ class UploadForm extends React.Component {
   }
 
   handleDrop (e) {
-    console.log(e[0]['preview'])
+    // console.log(e[0]['preview'])
     this.props.getPreviewImg(e[0]['preview'])
   }
 
@@ -59,7 +58,6 @@ class UploadForm extends React.Component {
 
 
   render() {
-    console.log(this.props.previewImgReducer)
     const { getFieldDecorator } = this.props.form;
     return (
       <div>
