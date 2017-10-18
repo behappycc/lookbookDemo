@@ -69,7 +69,6 @@ class IndexMain extends React.Component {
              <Col xs={24} sm={24} md={24} lg={24} xl={24}>
               <div style={sectionTextStyle}>
                 <WrappedUploadForm />
-                <div className="addthis_inline_share_toolbox"></div>
               </div>
             </Col>
           </Row>
