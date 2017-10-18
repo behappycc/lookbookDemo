@@ -19,7 +19,7 @@ class UploadForm extends React.Component {
     this.props.form.validateFields((err, values) => {
       if (!err) {
         console.log('Received values of upload-form: ', values)
-        this.props.uploadUser()
+        this.props.uploadUser(values)
       }
     })
   }
@@ -49,7 +49,7 @@ class UploadForm extends React.Component {
             )}
           </FormItem>
           <FormItem>
-            {getFieldDecorator('userAge', {
+            {getFieldDecorator('age', {
               rules: [{ required: true, message: 'Please input your age!' }],
             })(
               <Input prefix={<Icon type="user" style={{ fontSize: 13 }} />} placeholder="Age" />

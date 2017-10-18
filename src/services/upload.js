@@ -1,7 +1,7 @@
 export function ApiUploadUser(payload) {
   return(
     fetch(
-      'http://localhost:8000/uplaod/',
+      'http://localhost:8000/upload/',
       {
         accept: 'application/json',
         method: 'POST',
