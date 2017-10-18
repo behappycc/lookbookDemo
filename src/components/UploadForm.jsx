@@ -30,8 +30,6 @@ class UploadForm extends React.Component {
       if (!err) {
         console.log('Received values of upload-form: ', values)
         this.props.uploadUser(values)
-        let path = `/result/123`
-        this.props.history.push(path)
       }
     })
   }
