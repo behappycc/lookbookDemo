@@ -33,14 +33,16 @@ const coverStyle = {
 
   const fontStyle1 = {
     color: "white",
-    fontSize: "40px",
+    fontSize: "36px",
     textAlign: "center",
+    // border : "2px solid white"
   }
   
   const fontStyle2 = {
     color: "white",
-    fontSize: "30px",
+    fontSize: "24px",
     textAlign: "center",
+    marginTop: "20px"
   }
 
 class Cover extends React.Component {

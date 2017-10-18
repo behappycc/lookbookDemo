@@ -7,6 +7,15 @@ const RadioGroup = Radio.Group
 
 import * as actionCreators from '../actions'
 
+const dropzoneStyle = {
+  width  : "100%",
+  height : "100%",
+  border : "1px solid #d9d9d9",
+  borderRadius: "4px",
+  padding: "50px"
+
+}
+
 class UploadForm extends React.Component {
   constructor(props) {
     super(props);
@@ -21,6 +30,8 @@ class UploadForm extends React.Component {
       if (!err) {
         console.log('Received values of upload-form: ', values)
         this.props.uploadUser(values)
+        let path = `/result/123`
+        this.props.history.push(path)
       }
     })
   }
@@ -84,31 +95,17 @@ class UploadForm extends React.Component {
               <Input prefix={<Icon type="environment-o" style={{ fontSize: 13 }} />} placeholder="City" />
             )}
           </FormItem>
-          {/*<FormItem>
-            <div className="dropbox">
-              {getFieldDecorator('dragger', {
-                valuePropName: 'fileList',
-                getValueFromEvent: this.normFile,
-              })(
-                <Upload.Dragger name="files" action="/upload.do">
-                  <p className="ant-upload-drag-icon">
-                    <Icon type="inbox" />
-                  </p>
-                  <p className="ant-upload-text">Click or drag file to this area to upload your photo</p>
-                </Upload.Dragger>
-              )}
-            </div>
-          </FormItem>*/}
+          
           <FormItem>
             {getFieldDecorator('imgUrl', {
               rules: [{ required: true, message: 'Please input images!' }],
-              getValueFromEvent: this.normFile,
             })(
               <Dropzone
                 onDrop={(e) => this.handleDrop(e)}
+                style={dropzoneStyle}
               >
-                {this.props.previewImgReducer === '' ? 'Upload your photo here' : 
-                <img src={this.props.previewImgReducer} alt="Uploaded"/>}               
+                {this.props.previewImgReducer === '' ? <p style={{color: "#d9d9d9"}}>Upload your photo here</p> : 
+                <img style={{width: "100%"}} src={this.props.previewImgReducer} alt="Uploaded"/>}               
               </Dropzone>
             )}
           </FormItem>

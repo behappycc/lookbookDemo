@@ -69,7 +69,7 @@ class IndexMain extends React.Component {
           <Row type="flex">
             <Col xs={24} sm={24} md={24} lg={12} xl={12}>
               <div style={sectionTextStyle}>
-                <img src={this.props.userReducer.imgUrl} alt="" />
+                <img style={{width: "100%"}} src={this.props.userReducer.imgUrl} alt="" />
               </div>
             </Col>
 
@@ -81,9 +81,10 @@ class IndexMain extends React.Component {
                   x="name"
                   y="prob"
                   theme={VictoryTheme.material}
-                  style={{ parent: { overflow: "visible" } }}
+                  style={{width: "100%"}}
                   padding={60}
                   labelComponent={<VictoryLabel dx={10} />}
+                  margin="20px"
                 />
 
                 {/* <VictoryPie 
@@ -105,6 +106,12 @@ class IndexMain extends React.Component {
              <Col xs={24} sm={24} md={24} lg={24} xl={24}>
               <div style={sectionTextStyle}>
                 <div className="addthis_inline_share_toolbox"></div>
+                <Link to={`/`}>
+                  <Button type="primary" htmlType="submit" className="login-form-button" size="large" style={{marginTop:"10px"}}>
+                    Try again
+                  </Button>
+                </Link>
+                
               </div>
             </Col>
           </Row>

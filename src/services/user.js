@@ -3,7 +3,8 @@ export function ApiGetUser(payload) {
   console.log(`http://localhost:8000/api/v1.0/user/${payload.user}`)
   return(
     fetch(
-      `http://127.0.0.1:8000/api/v1.0/user/${payload.user}/` ,
+      // `http://127.0.0.1:8000/api/v1.0/user/${payload.user}/` ,
+      `http://127.0.0.1:8000/user/${payload.user}/` ,
       {
         accept: 'application/json',
         method: 'GET',
