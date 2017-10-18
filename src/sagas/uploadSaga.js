@@ -4,7 +4,7 @@ import { ApiUploadUser } from '../services/upload'
 
 export function* uploadUser(action) {
   console.log(action)
-  const response = yield call(ApiUploadUser);
+  const response = yield call(ApiUploadUser, action.payload);
 
 }
 
