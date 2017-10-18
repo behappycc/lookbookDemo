@@ -54,13 +54,6 @@ const customCardPStyle = {
   color: '#999'
 }
 
-const data = [
-    {quarter: 1, earnings: 13000},
-    {quarter: 2, earnings: 16500},
-    {quarter: 3, earnings: 14250},
-    {quarter: 4, earnings: 19000}
-  ];
-
 class IndexMain extends React.Component {
   constructor(props) {
     super(props)
@@ -68,10 +61,6 @@ class IndexMain extends React.Component {
   }
 
   render() {
-    console.log('yy')
-    console.log(this.props.userReducer)
-    console.log(this.props.userReducer.imgUrl)
-    console.log(this.props.userReducer.rank)
     return (
       <div className="ant-layout-content">
         <Cover />

@@ -33,8 +33,22 @@ class UploadForm extends React.Component {
     return e && e.fileList
   }
 
+  handleDrop (e) {
+    console.log(e[0]['preview'])
+    this.props.getPreviewImg(e[0]['preview'])
+  }
+
+  normFile = (e) => {
+    console.log('Upload event:', e);
+    if (Array.isArray(e)) {
+      return e;
+    }
+    return e && e.fileList;
+  }
+
 
   render() {
+    console.log(this.props.previewImgReducer)
     const { getFieldDecorator } = this.props.form;
     return (
       <div>
@@ -86,11 +100,15 @@ class UploadForm extends React.Component {
             </div>
           </FormItem>*/}
           <FormItem>
-            {getFieldDecorator('img', {
+            {getFieldDecorator('imgUrl', {
               rules: [{ required: true, message: 'Please input images!' }],
+              getValueFromEvent: this.normFile,
             })(
-              <Dropzone>
-                
+              <Dropzone
+                onDrop={(e) => this.handleDrop(e)}
+              >
+                {this.props.previewImgReducer === '' ? 'Upload your photo here' : 
+                <img src={this.props.previewImgReducer} alt="Uploaded"/>}               
               </Dropzone>
             )}
           </FormItem>
@@ -110,6 +128,7 @@ const WrappedUploadForm = Form.create()(UploadForm);
 const mapStateToProps = store => (
   {
     uploadReducer: store.uploadReducer,
+    previewImgReducer: store.previewImgReducer
   }
 )
 
