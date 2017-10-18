@@ -1,7 +1,9 @@
+import { SERVERIP } from '../constants/config'
+
 export function ApiGetUser(payload) {
   return(
     fetch(
-      `http://35.192.228.224:8000/api/v1.0/user/${payload.user}/` ,
+      `http://${SERVERIP}8000/api/v1.0/user/${payload.user}/` ,
 
       {
         accept: 'application/json',

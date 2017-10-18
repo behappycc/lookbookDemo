@@ -12,6 +12,7 @@ $ git clone https://github.com/behappycc/lookbookDemo
 # Go into the repository
 $ cd lookbookDemo
 $ git checkout feature/refactor
+* Modify your server ip in src/constants/config.js
 
 # Install dependencies
 $ curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -

@@ -1,7 +1,9 @@
+import { SERVERIP } from '../constants/config'
+
 export function ApiUploadUser(payload) {
   return(
     fetch(
-      'http://35.192.228.224:8000/upload/',
+      `http://${SERVERIP}:8000/upload/`,
       {
         accept: 'application/json',
         method: 'POST',
