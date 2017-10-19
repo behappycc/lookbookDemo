@@ -22,6 +22,10 @@ class UploadForm extends React.Component {
 
     this.handleSubmit = this.handleSubmit.bind(this)
     this.normFile = this.normFile.bind(this)
+
+    this.state = {
+      upload_img: ''
+    }
   }
 
   handleSubmit(e) {
@@ -29,8 +33,7 @@ class UploadForm extends React.Component {
     this.props.form.validateFields((err, values) => {
       if (!err) {
         console.log('Received values of upload-form: ', values)
-        console.log('see the getPreviewImg reducer', this.props.previewImgReducer)
-        values['imgUrl'] = this.props.previewImgReducer
+        values['imgUrl'] = this.state.upload_img
         console.log('ready to upload: ', values)
         this.props.uploadUser(values)
       }
@@ -47,6 +50,9 @@ class UploadForm extends React.Component {
 
   handleDrop (e) {
     console.log('handle drop', e[0]['preview'])
+    this.setState({
+      upload_img: e[0]['name']
+    })
     this.props.getPreviewImg(e[0]['preview'])
   }
 
