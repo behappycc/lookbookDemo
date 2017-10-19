@@ -1,15 +1,17 @@
 import { SERVERIP } from '../constants/config'
+import { createFetch, base, method, body, parse } from 'http-client'
+
+const uploadFormData = (form) => createFetch(
+  base(`http://${SERVERIP}:8000/upload/`),
+  method('POST'),
+  body(form),
+  parse('json', 'jsonData')
+)
 
 export function ApiUploadUser(payload) {
   return(
-    fetch(
-      `http://${SERVERIP}:8000/upload/` + payload['imgUrl'],
-      {
-        accept: 'application/json',
-        method: 'POST',
-        body: JSON.stringify(payload)
-      }
-    ).then((response) => {
+    uploadFormData(payload['form'])(payload['name'])
+    .then((response) => {
       if (response.status >= 200 && response.status < 300) {
         return response;
       } else {
