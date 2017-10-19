@@ -1,8 +1,8 @@
-import { SERVERIP } from '../constants/config'
+import { SERVERIP_BACKEND } from '../constants/config'
 import { createFetch, base, method, body, parse } from 'http-client'
 
 const uploadFormData = (form) => createFetch(
-  base(`http://${SERVERIP}:8000/upload/`),
+  base(`http://${SERVERIP_BACKEND}/upload/`),
   method('POST'),
   body(form),
   parse('json', 'jsonData')
