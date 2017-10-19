@@ -14,7 +14,6 @@ class Result extends React.Component {
   }
 
   componentWillMount() {
-    console.log('will mount')
     this.props.getUser(
       {
         user: this.props.match.params.user

@@ -3,7 +3,6 @@ import * as types from '../constants/actionTypes'
 import { ApiGetUser } from '../services/user'
 
 export function* getUser(action) {
-  console.log(action)
   const response = yield call(ApiGetUser, action.payload);
   console.log(response)
 

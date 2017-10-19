@@ -1,12 +1,13 @@
 import { takeLatest, put, call } from 'redux-saga/effects'
 import * as types from '../constants/actionTypes'
 import { ApiUploadUser } from '../services/upload'
+import { SERVERIP } from '../constants/config'
 
 export function* uploadUser(action) {
-  console.log(action)
   const response = yield call(ApiUploadUser, action.payload);
-
-  window.location.href = "http://localhost:8888/#/result/" + response['user'];
+  console.log(`http://${SERVERIP}/#/result/` + response['user'])
+  window.location.href = `http://${SERVERIP}/#/result/` + response['user']
+  location.reload()
 }
 
 export function*  watchUploadUser() {

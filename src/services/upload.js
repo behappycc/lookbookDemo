@@ -1,7 +1,9 @@
+import { SERVERIP } from '../constants/config'
+
 export function ApiUploadUser(payload) {
   return(
     fetch(
-      'http://localhost:8000/upload/' + payload['imgUrl'],
+      `http://${SERVERIP}:8000/upload/` + payload['imgUrl'],
       {
         accept: 'application/json',
         method: 'POST',
@@ -14,7 +16,6 @@ export function ApiUploadUser(payload) {
         const error = new Error(`HTTP Error ${response.statusText}`);
         error.status = response.statusText;
         error.response = response;
-        console.log(error);
         throw error;
       }
     }).then((response) => {
