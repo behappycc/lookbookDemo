@@ -55,6 +55,12 @@ $ sudo apt-get install docker-ce
 
 ```
 
+### Setting serverip in lookbookDemo\src\constants\config.js
+```
+LOCALHOST_FRONT = '{server_ip}:8888'
+LOCALHOST_BACKEND = '{server_ip}:8000'
+```
+
 ### Docker run
 ```
 $ git checkout feature/refactor
