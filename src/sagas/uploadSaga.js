@@ -5,6 +5,7 @@ import { SERVERIP } from '../constants/config'
 
 export function* uploadUser(action) {
   const response = yield call(ApiUploadUser, action.payload);
+  console.log('saga get response: ', response)
   console.log(`http://${SERVERIP}/#/result/` + response['user'])
   window.location.href = `http://${SERVERIP}/#/result/` + response['user']
   location.reload()

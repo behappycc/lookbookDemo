@@ -13,7 +13,7 @@ class Result extends React.Component {
 
   }
 
-  componentWillMount() {
+  componentDidMount() {
     this.props.getUser(
       {
         user: this.props.match.params.user

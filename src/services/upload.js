@@ -21,8 +21,7 @@ export function ApiUploadUser(payload) {
         throw error;
       }
     }).then((response) => {
-      const data = response.json();
-      return data;
+      return response['jsonData'];
     })
   )
 }
