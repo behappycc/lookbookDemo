@@ -32,12 +32,13 @@ class Result extends React.Component {
         user: this.props.match.params.user
       }
     )
+    console.log("url" + this.props.urlReducer)
   }
 
   render() {
     const meta = {
       chartset: 'UTF-8',
-      title: 'FASHION WORLD MAP',
+      title: 'FFASHION WORLD MAP',
       description: 'FASHION WORLD MAP',
       meta: {
         name: {
@@ -55,10 +56,15 @@ class Result extends React.Component {
         }
       }
     }
-    // console.log(meta)
+    console.log(meta)
+    console.log(this.props.userReducer.imgUrl)
     // console.log(this.props.match.params.user)
+    
     return (
       <div className="layout ant-layout">
+        <div style={{display: "none"}}>
+          <img src={this.props.userReducer.imgUrl} style={{width:"300px", height:"300px"}} alt="" />
+        </div>
         <DocumentMeta {...meta} />    
         <ResultMain/>
         <Footer/>
@@ -69,7 +75,8 @@ class Result extends React.Component {
 
 const mapStateToProps = store => (
   {
-    userReducer: store.userReducer
+    userReducer: store.userReducer,
+    urlReducer: store.urlReducer
   }
 )
 

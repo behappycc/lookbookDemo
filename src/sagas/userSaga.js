@@ -7,6 +7,11 @@ export function* getUser(action) {
   console.log(response)
 
   yield put({
+    type: types.GET_USER_URL,
+    payload: action.payload + '123321'
+  })
+
+  yield put({
     type: types.GET_USER_DONE,
     payload: response
   })
