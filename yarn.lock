@@ -1213,6 +1213,10 @@ builtin-status-codes@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/builtin-status-codes/-/builtin-status-codes-3.0.0.tgz#85982878e21b98e1c66425e03d0174788f569ee8"
 
+byte-length@^0.1.1:
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/byte-length/-/byte-length-0.1.1.tgz#e9b4774dbce7c59764bf5be87c302789a88738c3"
+
 bytes@2.5.0:
   version "2.5.0"
   resolved "https://registry.yarnpkg.com/bytes/-/bytes-2.5.0.tgz#4c9423ea2d252c270c41b2bdefeff9bb6b62c06a"
@@ -2250,6 +2254,10 @@ execa@^0.7.0:
     signal-exit "^3.0.0"
     strip-eof "^1.0.0"
 
+exenv@^1.2.1:
+  version "1.2.2"
+  resolved "https://registry.yarnpkg.com/exenv/-/exenv-1.2.2.tgz#2ae78e85d9894158670b03d47bec1f03bd91bb9d"
+
 expand-brackets@^0.1.4:
   version "0.1.5"
   resolved "https://registry.yarnpkg.com/expand-brackets/-/expand-brackets-0.1.5.tgz#df07284e342a807cd733ac5af72411e581d1177b"
@@ -2813,6 +2821,13 @@ htmlparser2@^3.9.1:
     entities "^1.1.1"
     inherits "^2.0.1"
     readable-stream "^2.0.2"
+
+http-client@^4.3.1:
+  version "4.3.1"
+  resolved "https://registry.yarnpkg.com/http-client/-/http-client-4.3.1.tgz#cf82fa1b1ef993c078a82144fe677a8671bc7cf2"
+  dependencies:
+    byte-length "^0.1.1"
+    query-string "^4.1.0"
 
 http-deceiver@^1.2.7:
   version "1.2.7"
@@ -5112,6 +5127,13 @@ react-chartjs-2@^2.6.2:
     lodash "^4.17.4"
     prop-types "^15.5.8"
 
+react-document-meta@^2.1.2:
+  version "2.1.2"
+  resolved "https://registry.yarnpkg.com/react-document-meta/-/react-document-meta-2.1.2.tgz#891ccca08a416c3eefe015294cef56dad0f19d3f"
+  dependencies:
+    prop-types "^15.5.8"
+    react-side-effect "^1.1.0"
+
 react-dom@^16.0.0:
   version "16.0.0"
   resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-16.0.0.tgz#9cc3079c3dcd70d4c6e01b84aab2a7e34c303f58"
@@ -5186,6 +5208,13 @@ react-router@^4.1.1, react-router@^4.2.0:
     path-to-regexp "^1.7.0"
     prop-types "^15.5.4"
     warning "^3.0.0"
+
+react-side-effect@^1.1.0:
+  version "1.1.3"
+  resolved "https://registry.yarnpkg.com/react-side-effect/-/react-side-effect-1.1.3.tgz#512c25abe0dec172834c4001ec5c51e04d41bc5c"
+  dependencies:
+    exenv "^1.2.1"
+    shallowequal "^1.0.1"
 
 react-slick@~0.15.0:
   version "0.15.4"

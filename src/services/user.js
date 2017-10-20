@@ -2,9 +2,9 @@ import { SERVERIP_BACKEND } from '../constants/config'
 
 export function ApiGetUser(payload) {
   return(
-    fetch(
-      `http://${SERVERIP_BACKEND}/api/v1.0/user/${payload.user}/` ,
-
+    fetch(      
+      // `http://${SERVERIP_BACKEND}/api/v1.0/user/${payload.user}/` ,
+      `http://localhost:8000/user/a123` ,
       {
         accept: 'application/json',
         method: 'GET',
