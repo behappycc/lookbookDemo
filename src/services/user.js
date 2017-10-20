@@ -4,7 +4,7 @@ export function ApiGetUser(payload) {
   return(
     fetch(
       `http://${SERVERIP_BACKEND}/api/v1.0/user/${payload.user}/` ,
-
+      
       {
         accept: 'application/json',
         method: 'GET',

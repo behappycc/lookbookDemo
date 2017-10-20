@@ -34,7 +34,8 @@ const sectionStyle1 = {
 
 const sectionTextStyle = {
   textAlign: "center",
-  margin: "30px"
+  margin: "10px",
+  overflow:"visible"
 }
 
 const cardStyle = { 
@@ -69,7 +70,7 @@ class IndexMain extends React.Component {
           <Row type="flex">
             <Col xs={24} sm={24} md={24} lg={12} xl={12}>
               <div style={sectionTextStyle}>
-                <img style={{width: "100%"}} src={this.props.userReducer.imgUrl} alt="" />
+                <img style={{width: "70%"}} src={this.props.userReducer.imgUrl} alt="" />
               </div>
             </Col>
 
@@ -80,26 +81,14 @@ class IndexMain extends React.Component {
                   data={this.props.userReducer.rank}
                   x="name"
                   y="prob"
+                  height={250}
                   theme={VictoryTheme.material}
-                  style={{width: "100%"}}
+                  style={{width: "100%", overflow:"visible"}}
                   padding={60}
                   labelComponent={<VictoryLabel dx={10} />}
                   margin="20px"
                 />
 
-                {/* <VictoryPie 
-                  data={this.props.userReducer.rank}
-                  x="name"
-                  y="prob"
-                  theme={VictoryTheme.material}
-                  style={{ parent: { overflow: "visible" } }}
-                  padding={60}
-                  labelComponent={<VictoryLabel dx={10} />}
-                  animate={{
-                    duration: 2000, 
-                    onLoad: {duration: 1000}, 
-                  }}
-                /> */}
               </div>
             </Col>
             
