@@ -1,6 +1,7 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import { Form, Icon, Input, Button, Radio, Spin } from 'antd'
+import { SERVERIP_FRONTEND } from '../constants/config'
+import { Form, Icon, Input, Button, Radio } from 'antd'
 import Dropzone from 'react-dropzone'
 import * as actionCreators from '../actions'
 
@@ -40,6 +41,7 @@ class UploadForm extends React.Component {
         form.append('image', this.state.upload_img)
 
         this.props.uploadUser({'form': form, 'name': this.state.upload_img['name']})
+        window.location.href = `http://${SERVERIP_FRONTEND}/#/loading`
       }
     })
   }

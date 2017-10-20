@@ -10,6 +10,7 @@ import configureStore from './store/configureStore'
 import rootSaga from './sagas'
 import Index from './containers/Index'
 import Result from './containers/Result'
+import Loading from './containers/Loading'
 
 
 const store = configureStore()
@@ -21,6 +22,7 @@ ReactDOM.render(
       <div className="app">
         <Switch>
           <Route exact path="/result/:user" component={Result}/>
+          <Route exact path="/loading" component={Loading}/>
           <Route exact path="/" component={Index}/>        
         </Switch>
       </div>
