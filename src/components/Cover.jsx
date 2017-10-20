@@ -57,7 +57,7 @@ class Cover extends React.Component {
           <div style={textStyle}>
             <Row type="flex" justify="center">
               <Col xs={24} sm={24} md={24} lg={24} xl={24}>
-                <h1 style={fontStyle1}>FASHION WORLDMAP</h1>
+                <h1 style={fontStyle1}>FASHION WORLD MAP</h1>
                 <h4 style={fontStyle2}>See your outfit blends by cities</h4>
               </Col>
             </Row>      
