@@ -10,7 +10,7 @@ class LoadingMain extends React.Component {
   render() {
     return (
       <div className="ant-layout-content">
-        <div style={{textAlign: 'center', marginTop: '250px', marginBottom: '250px'}}>
+        <div style={{textAlign: 'center', marginTop: (window.innerHeight-125)/2, marginBottom: (window.innerHeight-125)/2}}>
           <Spin tip={`Processing...`}/>
         </div>
       </div>
