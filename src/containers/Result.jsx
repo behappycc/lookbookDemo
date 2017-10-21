@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux'
-import DocumentMeta from 'react-document-meta'
+import { Helmet } from "react-helmet"
 
 import Header from '../components/Header'
 import Footer from '../components/Footer'
@@ -36,27 +36,7 @@ class Result extends React.Component {
   }
 
   render() {
-    const meta = {
-      chartset: 'UTF-8',
-      title: 'FFASHION WORLD MAP',
-      description: 'FASHION WORLD MAP',
-      meta: {
-        name: {
-          viewport: 'width=device-width, initial-scale=1.0',
-        },
-        'http-equiv': {
-          'X-UA-Compatible': 'ie=edges'
-        },
-        property: {
-          // 'og:url': 'http://fashionworldmap.citi.sinica.edu.tw/',
-          'og:type': 'article',
-          'og:title': 'FASHION WORLD MAP',
-          'og:description': 'FASHION WORLD MAP',
-          'og:image': this.props.userReducer.imgUrl
-        }
-      }
-    }
-    console.log(meta)
+    
     console.log(this.props.userReducer.imgUrl)
     // console.log(this.props.match.params.user)
     
@@ -65,7 +45,13 @@ class Result extends React.Component {
         <div style={{display: "none"}}>
           <img src={this.props.userReducer.imgUrl} style={{width:"300px", height:"300px"}} alt="" />
         </div>
-        <DocumentMeta {...meta} />    
+        <Helmet>
+          <meta property="og:url" content="http://fashionworldmap.citi.sinica.edu.tw/" />
+          <meta property="og:type" content="article" />
+          <meta property="og:title"  content="Fashion Worldmap" />
+          <meta property="og:description" content="Fashion Worldmap" />
+          <meta property="og:image" content="{this.props.userReducer.imgUrl}" />
+        </Helmet>   
         <ResultMain/>
         <Footer/>
       </div>
