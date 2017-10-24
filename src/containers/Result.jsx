@@ -8,17 +8,6 @@ import ResultMain from '../components/ResultMain'
 
 import * as actionCreators from '../actions'
 
-{/* <meta property="og:url" content="http://fashionworldmap.citi.sinica.edu.tw/" />
-  <meta property="og:type" content="article" />
-  <meta property="og:title"  content="Fashion Worldmap" />
-  <meta property="og:description" content="Fashion Worldmap" />
-  <meta property="og:image" content="static/img/" /> */}
-
-{/* <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge"> */}
-
-
 class Result extends React.Component {
 
   constructor(props) {
@@ -42,15 +31,12 @@ class Result extends React.Component {
     
     return (
       <div className="layout ant-layout">
-        <div style={{display: "none"}}>
-          <img src={this.props.userReducer.imgUrl} style={{width:"300px", height:"300px"}} alt="" />
-        </div>
         <Helmet>
-          <meta property="og:url" content="http://fashionworldmap.citi.sinica.edu.tw/" />
+          <meta property="og:url" content="http://35.192.228.224/#/result/32" />
           <meta property="og:type" content="article" />
-          <meta property="og:title"  content="Fashion Worldmap" />
-          <meta property="og:description" content="Fashion Worldmap" />
-          <meta property="og:image" content="{this.props.userReducer.imgUrl}" />
+          <meta property="og:title"  content="FFASHION WORLD MAP" />
+          <meta property="og:description" content="FASHION WORLD MAP" />
+          <meta property="og:image" content={this.props.userReducer.imgUrl} />
         </Helmet>   
         <ResultMain/>
         <Footer/>
